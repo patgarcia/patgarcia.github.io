@@ -1,0 +1,190 @@
+:root{
+    /* Mode switch vars */
+    --switch-width: 40px;
+    --switch-height: calc(var(--switch-width) / 2);
+    --switch-distance: calc(var(--switch-width) - var(--switch-height));
+
+    /* Light mode colors */
+    --light-1: rgba(240,240,240,1);
+    --light-2: rgba(200,200,200,1);
+    --light-3: rgba(160,160,160,1);
+    --light-4: rgba(120,120,120,1);
+    --light-5: rgba(60,60,60,1);
+    --light-6: rgba(0,0,0,1);
+
+    /* Dark mode colors */
+    --dark-1: rgba(0,0,0,1);
+    --dark-2: rgba(60,60,60,1);
+    --dark-3: rgba(120,120,120,1);
+    --dark-4: rgba(160,160,160,1);
+    --dark-5: rgba(200,200,200,1);
+    --dark-6: rgba(240,240,240,1);
+
+    /* Style variables */
+    --color-1: var(--light-1);
+    --color-2: var(--light-2);
+    --color-3: var(--light-3);
+    --color-4: var(--light-4);
+    --color-5: var(--light-5);
+    --color-6: var(--light-6);
+
+}
+
+
+/*=============
+  MODE SWITCH
+=============*/
+
+#mode-switch{
+    width: var(--switch-width);
+    height:var(--switch-height);
+    background: var(--color-6);
+    text-align: left;
+    margin: 20px auto 0;
+    border-radius: var(--switch-height);
+    border: solid var(--color-6);
+    transition: all .2s;
+}
+#mode-switch span{
+    display: inline-block;
+    height: 100%;
+    width: var(--switch-height);
+    background: var(--color-4);
+    animation: .5s lightmode forwards;
+    border-radius: 100%;
+}
+
+.darkmode{
+  animation: .5s darkmode !important;
+}
+
+
+@keyframes lightmode  {
+    0% {
+        transform: translate( 0,0);
+    }
+    100% {
+        transform: translate( var(--switch-distance),0);
+    }
+}
+
+@keyframes darkmode  {
+    0% {
+        transform: translate( var(--switch-distance),0);
+    }
+    100% {
+        transform: translate( 0,0);
+    }
+}
+
+
+
+/*=======
+  STYLE
+=======*/
+
+body {
+    transition: all 1s;
+    background: var(--color-1);
+    background-size: cover;
+    background-image: url("../img/bg.png");
+    background-position: center;
+    text-align: center;
+    font-family: 'Cabin', sans-serif;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Merriweather Sans', sans-serif;
+    color: var(--color-5);
+}
+
+h2, h4, h6{
+    color: var(--color-3);
+}
+
+#mode-checkbox{
+    display: none;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin-top: -10px;
+}
+li{
+    display: inline-block;
+    font-size: 1.2rem;
+}
+li:not(:last-child)::after{
+    content: "";
+    margin: 5px;
+}
+
+header li{
+    color: var(--color-5);
+    cursor: pointer;
+}
+header li:hover{
+    color: var(--color-6);
+    text-decoration: underline solid;
+}
+
+hr{
+    margin: 50px;
+    opacity: .3;
+}
+
+main{
+    padding-top: 30px;
+}
+
+main h1{
+    margin: 40px auto;
+}
+
+.avatar{
+    width: 50%;
+    max-width: 250px;
+    border-radius: 100%;
+    border: solid 10px;
+    border-color: var(--color-2);
+}
+
+.avatar .darkmode{
+    
+}
+
+main h4{
+    margin-top: -10px;
+}
+
+main{
+    max-width: 500px;
+    margin: 0 auto;
+    color: var(--color-5);
+}
+main p{
+    padding: 10px;
+    line-height: 1.6rem;
+    font-size: 0.9rem;
+}
+footer{
+    background: var(--color-1);
+    height: 300px;
+/*     padding: 30px;*/
+    padding-top: 2rem; 
+    color: var(--color-4);
+    margin-top: 100px;
+    background-size: cover;
+    background-image: url("../img/mountains.png");
+    background-position: center;
+}
+.linkedin{
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+}
+.svg-dark-mode .dark{
+     filter: invert(1);
+}
