@@ -58,23 +58,6 @@
             ctx.restore();
         }
 
-        // branch(80, Math.PI / 8, 0.8);
-
-        // let angleDenom = 60;
-
-        // function drawTree(step) {
-        //     if (angleDenom > 8) {
-        //         ctx.resetTransform();
-        //         ctx.clearRect(0, 0, c.width, c.height);
-        //         ctx.translate(c.offsetWidth / 2, 0)
-
-        //         branch(80, Math.PI / angleDenom, 0.8);
-        //         angleDenom--;
-        //         window.requestAnimationFrame(drawTree);
-        //     }
-        // }
-        // window.requestAnimationFrame(drawTree);
-
         yVals.reverse();
         yValsCopy = [...yVals];
 
@@ -96,7 +79,9 @@
                 window.requestAnimationFrame(drawTreeBounce);
             }
         }
-        window.requestAnimationFrame(drawTreeBounce);
+        window.onload = function() {
+            window.requestAnimationFrame(drawTreeBounce);
+        }
     </script>
 </body>
 
