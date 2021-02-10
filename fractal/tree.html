@@ -17,69 +17,69 @@
 <body>
     <canvas id="cvx" width=500 height=500></canvas>
     <script>
-        const degToRad = deg => deg * Math.PI / 180;
-        const radToDeg = rad => deg * 180 / Math.PI;
-
-        function sineY(deg, amp, freq, damp) {
-            // deg - x value
-            // damp - dampens the sine wave
-            let y = amp * Math.sin(degToRad(deg) * freq) / deg * damp;
-            let unitSine = Math.sin(degToRad(deg) * freq);
-            return [y, unitSine]
-        }
-
-        let c = document.getElementById('cvx');
-        let ctx = c.getContext('2d');
-
-        let counter = 0;
-        let yVals = [];
-        for (let i = 1; i < c.width; i++) {
-            let [y, unitSine] = sineY(x = i, amp = 400, freq = 4, damp = .5);
-            if (Math.abs(unitSine) == 1) {
-                counter++;
-            };
-            if (counter == 20) break;
-            yVals.push(y);
-            ctx.rect(i, y + c.height / 2, 2, 2);
-        }
-        ctx.stroke();
-
-        ctx.translate(c.offsetWidth / 2, 0)
-
-        function branch(size, angle, scale) {
-            let stroke = ctx.strokeRect(0, 0, 1, size);
-            if (size < 10) return;
-            ctx.save();
-            ctx.translate(0, size);
-            ctx.rotate(-angle);
-            branch(size * scale, angle, scale);
-            ctx.rotate(2 * angle);
-            branch(size * scale, angle, scale);
-            ctx.restore();
-        }
-
-        yVals.reverse();
-        yValsCopy = [...yVals];
-
-        function drawTreeBounce(step) {
-            if (yVals.length) {
-                ctx.resetTransform();
-                ctx.clearRect(0, 0, c.width, c.height);
-                ctx.translate(c.offsetWidth / 2, 0)
-
-                yVal = yVals.pop();
-                let branchAngle = Math.PI / (8 + yVal);
-                if (8 + yVal < 5) {
-                    // console.log('branchAngle', branchAngle, 'yVal', yVal, '8 + yVal', 8 + yVal);
-                }
-                if (!(branchAngle == NaN)) {
-                    branch(80, branchAngle, 0.8);
-                }
-                console.log('branchAngle', branchAngle, 'yVal', yVal, '8 + yVal', 8 + yVal);
-                window.requestAnimationFrame(drawTreeBounce);
-            }
-        }
         window.onload = function() {
+            const degToRad = deg => deg * Math.PI / 180;
+            const radToDeg = rad => deg * 180 / Math.PI;
+
+            function sineY(deg, amp, freq, damp) {
+                // deg - x value
+                // damp - dampens the sine wave
+                let y = amp * Math.sin(degToRad(deg) * freq) / deg * damp;
+                let unitSine = Math.sin(degToRad(deg) * freq);
+                return [y, unitSine]
+            }
+
+            let c = document.getElementById('cvx');
+            let ctx = c.getContext('2d');
+
+            let counter = 0;
+            let yVals = [];
+            for (let i = 1; i < c.width; i++) {
+                let [y, unitSine] = sineY(x = i, amp = 400, freq = 4, damp = .5);
+                if (Math.abs(unitSine) == 1) {
+                    counter++;
+                };
+                if (counter == 20) break;
+                yVals.push(y);
+                ctx.rect(i, y + c.height / 2, 2, 2);
+            }
+            ctx.stroke();
+
+            ctx.translate(c.offsetWidth / 2, 0)
+
+            function branch(size, angle, scale) {
+                let stroke = ctx.strokeRect(0, 0, 1, size);
+                if (size < 10) return;
+                ctx.save();
+                ctx.translate(0, size);
+                ctx.rotate(-angle);
+                branch(size * scale, angle, scale);
+                ctx.rotate(2 * angle);
+                branch(size * scale, angle, scale);
+                ctx.restore();
+            }
+
+            yVals.reverse();
+            yValsCopy = [...yVals];
+
+            function drawTreeBounce(step) {
+                if (yVals.length) {
+                    ctx.resetTransform();
+                    ctx.clearRect(0, 0, c.width, c.height);
+                    ctx.translate(c.offsetWidth / 2, 0)
+
+                    yVal = yVals.pop();
+                    let branchAngle = Math.PI / (8 + yVal);
+                    if (8 + yVal < 5) {
+                        // console.log('branchAngle', branchAngle, 'yVal', yVal, '8 + yVal', 8 + yVal);
+                    }
+                    if (!(branchAngle == NaN)) {
+                        branch(80, branchAngle, 0.8);
+                    }
+                    console.log('branchAngle', branchAngle, 'yVal', yVal, '8 + yVal', 8 + yVal);
+                    window.requestAnimationFrame(drawTreeBounce);
+                }
+            }
             window.requestAnimationFrame(drawTreeBounce);
         }
     </script>
