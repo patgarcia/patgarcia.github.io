@@ -34,13 +34,16 @@
 
             let counter = 0;
             let yVals = [];
-            for (let i = 1; i < c.width; i++) {
-                let [y, unitSine] = sineY(x = i, amp = 400, freq = 4, damp = .5);
+            let amp_val = 510;
+            for (let i = 1; i < c.width * 2; i++) {
+                let [y, unitSine] = sineY(x = i, amp = amp_val, freq = 4, damp = .5);
+                amp_val -= 0.5;
                 if (Math.abs(unitSine) == 1) {
                     counter++;
                 };
                 if (counter == 20) break;
                 yVals.push(y);
+                // draw the sine function
                 // ctx.rect(i, y + c.height / 2, 2, 2);
             }
             ctx.stroke();
@@ -70,13 +73,10 @@
 
                     yVal = yVals.pop();
                     let branchAngle = Math.PI / (8 + yVal);
-                    if (8 + yVal < 5) {
-                        // console.log('branchAngle', branchAngle, 'yVal', yVal, '8 + yVal', 8 + yVal);
-                    }
                     if (!(branchAngle == NaN)) {
                         branch(80, branchAngle, 0.8);
                     }
-                    console.log('branchAngle', branchAngle, 'yVal', yVal, '8 + yVal', 8 + yVal);
+                    // console.log('branchAngle', branchAngle, 'yVal', yVal, '8 + yVal', 8 + yVal);
                     window.requestAnimationFrame(drawTreeBounce);
                 }
             }
