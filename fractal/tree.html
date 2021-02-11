@@ -45,7 +45,6 @@
             // draw the sine function
             // ctx.rect(i, y + c.height / 2, 2, 2);
         }
-        ctx.stroke();
 
         ctx.translate(c.offsetWidth / 2, 0)
 
@@ -65,23 +64,25 @@
 
         yVals.reverse();
         yValsCopy = [...yVals];
+        window.onload = function() {
 
-        function drawTreeBounce(step) {
-            if (yVals.length) {
-                ctx.resetTransform();
-                ctx.clearRect(0, 0, c.width, c.height);
-                ctx.translate(c.offsetWidth / 2, 0)
+            function drawTreeBounce(step) {
+                if (yVals.length) {
+                    ctx.resetTransform();
+                    ctx.clearRect(0, 0, c.width, c.height);
+                    ctx.translate(c.offsetWidth / 2, 0)
 
-                yVal = yVals.pop();
-                let branchAngle = Math.PI / (8 + yVal);
-                if (!(branchAngle == NaN)) {
-                    branch(80, branchAngle, .8);
+                    yVal = yVals.pop();
+                    let branchAngle = Math.PI / (8 + yVal);
+                    if (!(branchAngle == NaN)) {
+                        branch(80, branchAngle, .8);
+                    }
+                    // console.log('branchAngle', branchAngle, 'yVal', yVal, '8 + yVal', 8 + yVal);
+                    window.requestAnimationFrame(drawTreeBounce);
                 }
-                // console.log('branchAngle', branchAngle, 'yVal', yVal, '8 + yVal', 8 + yVal);
-                window.requestAnimationFrame(drawTreeBounce);
             }
+            window.requestAnimationFrame(drawTreeBounce);
         }
-        window.requestAnimationFrame(drawTreeBounce);
     </script>
 </body>
 
