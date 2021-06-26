@@ -10,6 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Merriweather+Sans&display=swap" rel="stylesheet">
     <!--   Local Style   -->
     <link rel="stylesheet" href="static/css/style.css">
+    <!--  Third Party and Local JS -->
+    <script src="./static/js/two.min.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="./static/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./static/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./static/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./static/img/favicon/site.webmanifest">
+
 </head>
 
 <body>
@@ -21,35 +28,47 @@
         <ul>
             <li onclick="scrollToObject(this)" data-href="about">about</li>
             <li onclick="scrollToObject(this)" data-href="contact">contact</li>
+            <li onclick="scrollToObject(this)" data-href="portfolio">portfolio</li>
         </ul>
     </header>
-    <main>
-        <section>
-            <img class="avatar mode-tag" src="static/img/avatar_light.jpg" data-light="static/img/avatar_light.jpg" data-dark="static/img/avatar_dark.jpg">
-            <h2>Hi! 👋 I'm Patricio.</h2>
-            <h4>a web developer located in Durham, NC.</h4>
-            <p>Multifaceted is the result of thinking about how best to share the multiple aspects of my life online. This website is intended for professional outreach, but my design intention is for it to be an enjoyable experience for anyone.</p>
-            <h3>❉</h3>
+<main>
+    <img class="avatar mode-tag" src="static/img/avatar_light.jpg" data-light="static/img/avatar_light.jpg" data-dark="static/img/avatar_dark.jpg">
+    <section>
+        <h2>Hi! 👋 I'm Patricio.</h2>
+        <h4>a web developer located in&nbsp;Durham,&nbsp;NC.</h4>
+        <p>Product lead turned software developer, I'm a passionate problem-solver with a knack for geometry and drone flying. My code preference is performant, readable, and concise, in that order. I use Django/React for Fullstack and Python for data science.</p>
+        <p>This website is intended for professional use, as my portfolio, but my design intention is for it to be an enjoyable experience for most. </p>
+        <!-- <h3>❉</h3> -->
+    </section>
+    <section id="about" class="inver-color">
+            <img src="static/img/tessellate_light.png" data-light="static/img/tessellate_light.png" data-dark="static/img/tessellate_dark.png">
+            <h2>about</h2>
+            <p>Multifaceted is both, my portfolio and a web art installation. As an art piece it aims to represent the multi-dimensional nature of people. It leverages an interactive tessellate as a discovery tool to different facets of myself.</p>
+
         </section>
         <hr />
-        <section id="about">
-            <h3>about me</h3>
+        <section id="portfolio">
+            <h3>Portfolio</h3>
+
             <p>
-            I believe that each skill, interest, and loved one shapes each facet of our personality. I've broke down my facets in six categories as follows:
-            </p>
-            <h4>Skills</h4>
+                I believe that each skill, interest, and loved one shapes each facet of our personality. I've broke down my facets in six categories as follows:
+                </p>
+                <h4>Skills</h4>
+    
+                <h4>Interests</h4>
+    
+                <h4>Hobbies</h4>
+    
+                <h4>Personal</h4>
+    
+                <h4>Leisure</h4>
+    
+                <h4>Transcendental</h4>
 
-            <h4>Interests</h4>
 
-            <h4>Hobbies</h4>
-
-            <h4>Personal</h4>
-
-            <h4>Leisure</h4>
-
-            <h4>Transcendental</h4>
         </section>
         <hr />
+
         <section id="contact">
             <h3>Contact</h3>
             <p>
@@ -62,12 +81,13 @@
 
         </section>
     </main>
-    <footer>
+        <footer>
         <p>Have a wonderful day!</p>
         <span>©Copyright 2020 Patricio Garcia</span>
     </footer>
-    <!--   Local Scripts   -->
-    <script src="static/js/script.js"></script>
+
 </body>
+<script src="./static/js/script.js" ></script>
+<script src="./static/js/tessellate.js" ></script>
 
 </html>

@@ -15,6 +15,7 @@ const switchMode = (switcher, className) => {
         switchRootVars('dark')
         switchImgSrc('dark')
     }
+    twoJSChildrenColorNegative();
 }
 
 
