@@ -1,6 +1,7 @@
 /*=======
-    COLORS
-  ========*/
+  COLORS
+========*/
+
 // Rainbow color generator
 function generateRainbowColors(
     steps = 3,
@@ -80,7 +81,7 @@ const rainbowColors = Array(colorsNum).fill(null);
 rainbowColors.forEach((_, i) => {
     rainbowColors[i] = `rgba(${Math.floor(currentColor.r)}, ${Math.floor(
         currentColor.g
-    )}, ${Math.floor(currentColor.b)}, .7)`;
+    )}, ${Math.floor(currentColor.b)}, .6)`;
     currentColor = generateRainbowColors(colorSteps, currentColor);
 });
 
@@ -105,8 +106,8 @@ function desaturateRGBAString(rgbaString) {
 }
 
 /*======
-    TOOLS
-  =======*/
+  TOOLS
+=======*/
 
 const rgbaNumsFromString = rgbaString => {
     // Returns rgba as numeric values from an rgba string
@@ -189,8 +190,8 @@ const pointWithinElement = (elem, point) =>
     point.y < window.innerHeight;
 
 /*============
-    DEBUG TOOLS
-  =============*/
+  DEBUG TOOLS
+=============*/
 
 const logPathData = tempPath => {
     console.log(
@@ -221,8 +222,8 @@ const logPathData = tempPath => {
 };
 
 /*===============
-    BUSINESS LOGIC
-  ================*/
+  BUSINESS LOGIC
+================*/
 
 // TODO: Refactor to use proper factory function programming pattern
 function lineFactory(P1, P2) {
@@ -504,8 +505,8 @@ function tessellate(line) {
 tessellate(initLine);
 
 /*==============
-    MOUSE DISPLAY
-   ==============*/
+  MOUSE DISPLAY
+==============*/
 let mouseCoordinatesHUD = document.createElement('div');
 mouseCoordinatesHUD.id = 'mouse-coordinates-hud';
 mouseCoordinatesHUD.innerText = `x: \n y: `;
@@ -515,8 +516,8 @@ window.onmousemove = e => {
 };
 
 /*==========
-    DARK MODE
-   ==========*/
+  DARK MODE
+==========*/
 const twoJSChildrenColorNegative = () => {
     Array.from(two.scene.children).forEach(child => {
         child.color = invertColors(child.color);
@@ -531,12 +532,11 @@ const twoJSChildrenColorNegative = () => {
     // document.body.style.background = invertColors(document.body.style.background);
 };
 
-//window ready
+/*=============
+  WINDOW READY
+=============*/
 window.onload = () => {
-    //   console.log('window ready', performance.now());
-    // Two container top margin and children downpour
     let container = document.querySelector('.two-container');
-    // container.style.marginTop = '80px';
     container.style.position = 'absolute';
     container.style.top = '222px';
     two.scene.children.forEach(child => {

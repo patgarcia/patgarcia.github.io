@@ -2,53 +2,87 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mul·ti·fac·et·ed</title>
-    <!--   Google Fonts   -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Merriweather+Sans&display=swap" rel="stylesheet">
-    <!--   Local Style   -->
-    <link rel="stylesheet" href="static/css/style.css">
-    <!--  Third Party and Local JS -->
-    <script src="./static/js/two.min.js"></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="./static/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./static/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./static/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="./static/img/favicon/site.webmanifest">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>mul·ti·fac·et·ed</title>
+	<!--   Google Fonts   -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Cabin&family=Merriweather+Sans&display=swap" rel="stylesheet">
+	<!--   Local Style   -->
+	<link rel="stylesheet" href="static/css/style.css">
+	<!--  Third Party and Local JS -->
+	<script src="./static/js/two.min.js"></script>
+	<link rel="apple-touch-icon" sizes="180x180" href="./static/img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./static/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./static/img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="./static/img/favicon/site.webmanifest">
 
 </head>
 
 <body>
-    <header>
-        <div id="mode-switch"><span id="switcher"></span></div>
-        <input type="checkbox" name="mode" id="mode-checkbox" checked>
-        <h1>mul·ti·fac·et·ed</h1>
-        <nav>
-        <ul>
-            <li onclick="scrollToObject(this)" data-href="about">about</li>
-            <li onclick="scrollToObject(this)" data-href="contact">contact</li>
-            <li onclick="scrollToObject(this)" data-href="portfolio">portfolio</li>
-        </ul>
-    </header>
-<main>
-    <img class="avatar mode-tag" src="static/img/avatar_light.jpg" data-light="static/img/avatar_light.jpg" data-dark="static/img/avatar_dark.jpg">
-    <section>
-        <h2>Hi! 👋 I'm Patricio.</h2>
-        <h4>a web developer located in&nbsp;Durham,&nbsp;NC.</h4>
-        <p>Product lead turned software developer, I'm a passionate problem-solver with a knack for geometry and drone flying. My code preference is performant, readable, and concise, in that order. I use Django/React for Fullstack and Python for data science.</p>
-        <p>This website is intended for professional use, as my portfolio, but my design intention is for it to be an enjoyable experience for most. </p>
-        <!-- <h3>❉</h3> -->
-    </section>
-    <section id="about" class="inver-color">
-            <img src="static/img/tessellate_light.png" data-light="static/img/tessellate_light.png" data-dark="static/img/tessellate_dark.png">
-            <h2>about</h2>
-            <p>Multifaceted is both, my portfolio and a web art installation. As an art piece it aims to represent the multi-dimensional nature of people. It leverages an interactive tessellate as a discovery tool to different facets of myself.</p>
-
-        </section>
-        <hr />
-        <section id="portfolio">
-            <h3>Portfolio</h3>
+	<header>
+		<div id="mode-switch"><span id="switcher"></span></div>
+		<input type="checkbox" name="mode" id="mode-checkbox" checked>
+		<h1>mul·ti·fac·et·ed</h1>
+		<nav>
+			<ul>
+				<li onclick="scrollToObject(this)" data-href="about">about</li>
+				<li onclick="scrollToObject(this)" data-href="portfolio">portfolio</li>
+				<li onclick="scrollToObject(this)" data-href="contact">contact</li>
+			</ul>
+	</header>
+	<main>
+		<img class="avatar mode-tag" src="static/img/avatar_light.jpg" data-light="static/img/avatar_light.jpg"
+			data-dark="static/img/avatar_dark.jpg">
+		<section>
+			<h2>Hi! 👋 I'm Patricio.</h2>
+			<h4>a web developer located in&nbsp;Durham,&nbsp;NC.</h4>
+			<p>Product lead turned software developer, I'm a passionate problem-solver with a knack for geometry and drone
+				flying. My code preference is readable, performant, and concise, in that order. I use Django/React for Fullstack
+				and Python for data science.</p>
+			<p>This website is intended for professional use as <b onclick="scrollToObject(this)" data-href="portfolio"
+					style="text-decoration: underline; font-weight: 100; color: var(--color-6)">my portfolio</b>, but my design
+				intention is for it to be an enjoyable experience for most. </p>
+			<!-- <h3>❉</h3> -->
+		</section>
+		<section id="about" class="inver-color">
+			<div class="content">
+				<img class="mode-tag" src="static/img/tessellate_light.png" data-light="static/img/tessellate_light.png"
+					data-dark="static/img/tessellate_dark.png">
+				<h2>about mul·ti·fac·et·ed</h2>
+				<p>Multifaceted is both, my portfolio and a web art installation. As an art piece it aims to represent the
+					multi-dimensional nature of people. It leverages an interactive tessellate as a discovery tool to explore the
+					different facets of myself.</p>
+				<code><< INTERACTIVE FEATURE COMING SOON >></code>
+				<!-- <button>Play with the tessellate</button> -->
+			</div>
+			<hr>
+			<div class="content">
+				<h2 class="aboutme">about me</h2>
+				<p class="aboutme">The story of how I chose web development as a career is a long and winded one, but in short,
+					my first digital love was 3D design until I stumbled upon a powerful web design workflow, back in 2005.
+					Combined, the story and the workflow, took me through a beautiful journey where I got to either study, work
+					directly in, or be exposed to:</p>
+				<ul>
+					<li>Industry research and competition analysis</li>
+					<li>Art direction and Graphic Design</li>
+					<li>Photography production and post-production</li>
+					<li>Video production and post-production</li>
+					<li>Magazine production and printing</li>
+					<li>Usablity studies and heuristics</li>
+					<li>Data science</li>
+					<li>UI and UX Design</li>
+					<li>SEO</li>
+					<li>Front-end Development</li>
+					<li>Entrepreneurship</li>
+					<li>3D Animation and printing</li>
+				</ul>
+				<p>Arriving to my final destination, <b style="color: var(--color-5)">code</b>.</p>
+			</div>
+		</section>
+		<!-- TODO: Use section below to create filters for tessellate when used to navigate aspects of my life -->
+		<!-- <section id="portfolio">
+            <h2>Portfolio</h2>
 
             <p>
                 I believe that each skill, interest, and loved one shapes each facet of our personality. I've broke down my facets in six categories as follows:
@@ -66,28 +100,119 @@
                 <h4>Transcendental</h4>
 
 
-        </section>
-        <hr />
+        </section> -->
+		<section id="portfolio">
+			<!-- <img class="mode-tag" style="width: 200px;" src="./static/img/shapes_light.png" data-light="./static/img/shapes_light.png" data-dark="./static/img/shapes_dark.png" alt="portfolio briefcase" > -->
+			<span style="font-size: 9rem; line-height: 9rem;">💼</span>
+			<div class="content">
+				<h2>Portfolio</h2>
 
-        <section id="contact">
-            <h3>Contact</h3>
-            <p>
-                For more information please visit my linkedin profile:
-                        <a href="https://www.linkedin.com/in/garciapat">
-                <img class="linkedin mode-tag" src="static/img/linkedin_light.png" data-light="static/img/linkedin_light.png" data-dark="static/img/linkedin_dark.png">
-            </a>
-            </p>
+				<!-- <div id="threejs" style="width:100%; height: 200px; background:red;"></div> -->
+
+				<p>
+					This portfolio showcases my work as a Javascript and Python developer. For other web product lead or web
+					production related pieces, please check my resume.
+				</p>
+				<div class="project">
+					<h3>Leftovers <code style="font-size: 1rem">-- Work in progress</code></h3>
+					<h4>Web app to fight food waste with an AI twist.</h4>
+					<p>Take a picture of your leftovers and track them overtime, or make them public
+						to share them with others. The posting workflow includes a machine learning model to predict the type of
+						dish being uploaded.</p>
+					<div class="project-content">
+						<h4>Technologies</h4>
+						<ul>
+							<li><b>Languages:</b> Python, Javascript</li>
+							<li><b>Machine Learning:</b> Tensorflow JS</li>
+							<li><b>UI Library:</b> React ⚛</li>
+							<li><b>Web Framework:</b> Django</li>
+							<li><b>API Toolkit:</b> Django REST Framework</li>
+							<li><b>Database:</b> PostgreSQL</li>
+							<li><b>App platform:</b> Heroku</li>
+						</ul>
+						<button onclick='window.location = "https://www.leftovers.love/"'>Live site</button>
+					</div>
+				</div>
+				<div class="project">
+					<h3>All The Feelz</h3>
+					<h4>Emotion wheel web app</h4>
+					<p>In 1980 Robert Plutchik proposed a psychoevolutionary classification approach for general emotional
+						responses. This web app is a way to levereage that theory to classify and record how you feel overtime.</p>
+					<div class="project-content">
+						<h4>Technologies</h4>
+						<ul>
+							<li><b>Languages:</b> Python, Javascript</li>
+							<li><b>UI Library:</b> Vue</li>
+							<li><b>Web Framework:</b> Django</li>
+							<li><b>Database:</b> PostgreSQL</li>
+							<li><b>App platform:</b> Divio Cloud</li>
+						</ul>
+						<button onclick='window.location = "https://allthefeelz.app/"'>Live site</button>
+					</div>
+				</div>
+				<div class="project">
+					<h3>Synesthesia</h3>
+					<h4>Art installation to emulate synesthesia</h4>
+					<p>An art gallery featuring an art installation component to emulate a synesthetic experience of hearing
+						color. Future work will include more elaborate synth transformations and better styling.</p>
+					<div class="project-content">
+						<h4>Technologies</h4>
+						<ul>
+							<li><b>Languages:</b> Javascript</li>
+							<li><b>UI Library:</b> React ⚛</li>
+							<li><b>API:</b> The Metropolitan Art Museum API</li>
+							<li><b>App platform:</b> Heroku</li>
+						</ul>
+						<button onclick='window.location = "https://github.com/patgarcia/synesthesia"'>Github Repo</button>
+						<button onclick='window.location = "https://synthesthesia.herokuapp.com/"'>Live site</button>
+					</div>
+				</div>
+				<div class="project">
+					<h3>DOM Invaders</h3>
+					<h4>Space invaders emulator using Vanilla JS.</h4>
+					<p>This project is purely written in HTML, CSS and Vanilla JS. The only assets used is a font. I wrote a
+						python script to create the game sprites. It takes as an input a reference image and outputs the
+						corresponding CSS code. <br /><code
+							style="font-size: 1rem; line-height: 1.2rem;">* Doesn't work on mobile devices, yet. <br />** 🐭 mouse wheel to move the ship, click to shoot.</code>
+					</p>
+					<div class="project-content">
+						<h4>Technologies</h4>
+						<ul>
+							<li><b>Languages:</b> Javascript</li>
+							<li><b>App platform:</b> Github pages</li>
+						</ul>
+						<button onclick='window.location = "https://github.com/patgarcia/dom-invaders"'>Github Repo</button>
+						<button onclick='window.location = "https://patgarcia.github.io/dom-invaders/"'>Live site</button>
+					</div>
+				</div>
+				<!-- <h4>Localtag</h4>
+                <h4>Synesthesia</h4>
+                <h4>DOM Invaders</h4> -->
+			</div>
+		</section>
+		</section>
+		<section id="contact">
+			<h3>Contact</h3>
+			<span style="font-size: 9rem; line-height: 9rem;">📇</span>
+			<p>
+				For more information please visit my linkedin profile:
+				<a href="https://www.linkedin.com/in/garciapat">
+					<img style="width: 200px;" class="linkedin mode-tag" src="static/img/linkedin_light.png"
+						data-light="static/img/linkedin_light.png" data-dark="static/img/linkedin_dark.png">
+				</a>
+			</p>
 
 
-        </section>
-    </main>
-        <footer>
-        <p>Have a wonderful day!</p>
-        <span>©Copyright 2020 Patricio Garcia</span>
-    </footer>
+		</section>
+		<hr>
+	</main>
+	<footer>
+		<p>Have a wonderful day!</p>
+		<span>©Copyright 2020- Patricio Garcia</span>
+	</footer>
 
 </body>
-<script src="./static/js/script.js" ></script>
-<script src="./static/js/tessellate.js" ></script>
+<script src="./static/js/script.js"></script>
+<script src="./static/js/tessellate.js"></script>
 
 </html>

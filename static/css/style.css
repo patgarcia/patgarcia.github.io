@@ -4,7 +4,7 @@
     --switch-height: calc(var(--switch-width) / 2);
     --switch-distance: calc(var(--switch-width) - var(--switch-height));
 
-    /* Light mode colors */
+    /* Light mode bw shades */
     --light-1: rgb(240, 240, 240);
     --light-2: rgb(200, 200, 200);
     --light-3: rgb(160, 160, 160);
@@ -12,13 +12,41 @@
     --light-5: rgb(60, 60, 60);
     --light-6: rgb(0, 0, 0);
 
-    /* Dark mode colors */
+    /* Dark mode bw shades */
     --dark-1: rgb(0, 0, 0);
     --dark-2: rgb(60, 60, 60);
     --dark-3: rgb(120, 120, 120);
     --dark-4: rgb(160, 160, 160);
     --dark-5: rgb(200, 200, 200);
     --dark-6: rgb(240, 240, 240);
+    
+    /* Light mode colors */
+    --light-r: rgb(255, 0, 0);
+    --light-o: rgb(255, 127, 0); /* orange */
+    --light-y: rgb(255, 255, 0);
+    --light-u: rgb(127, 255, 0); /* chartreuse */
+    --light-g: rgb(0, 255, 0);
+    --light-s: rgb(0, 255, 127); /* spring green */
+    --light-c: rgb(0, 255, 255);
+    --light-a: rgb(0, 127, 255); /* Azure */
+    --light-b: rgb(0, 0, 255);
+    --light-v: rgb(127, 0, 255); /* Violet */
+    --light-m: rgb(255, 0, 255);
+    --light-e: rgb(255, 0, 127); /* Rose */
+
+    /* Dark mode colors -- dark negative versions of light */
+    --dark-c: rgb(66, 0, 0);
+    --dark-a: rgb(66, 33, 0);
+    --dark-b: rgb(66, 66, 0);
+    --dark-v: rgb(33, 66, 0);
+    --dark-m: rgb(0, 66, 0);
+    --dark-e: rgb(0, 66, 33);
+    --dark-r: rgb(0, 66, 66);
+    --dark-o: rgb(0, 33, 66);
+    --dark-y: rgb(0, 0, 66);
+    --dark-u: rgb(33, 0, 66);
+    --dark-g: rgb(66, 0, 66);
+    --dark-s: rgb(66, 0, 33);
 
     /* Style variables */
     --color-1: var(--light-1);
@@ -27,6 +55,18 @@
     --color-4: var(--light-4);
     --color-5: var(--light-5);
     --color-6: var(--light-6);
+    --color-r: var(--light-r);
+    --color-o: var(--light-o);
+    --color-y: var(--light-y);
+    --color-u: var(--light-u);
+    --color-g: var(--light-g);
+    --color-s: var(--light-s);
+    --color-c: var(--light-c);
+    --color-a: var(--light-a);
+    --color-b: var(--light-b);
+    --color-v: var(--light-v);
+    --color-m: var(--light-m);
+    --color-e: var(--light-e);
 }
 
 /*=============
@@ -80,12 +120,12 @@
 
 body {
     transition: all 1s;
-    background: var(--color-2);
+    background: var(--color-1);
     background-size: cover;
-    background-image: linear-gradient(
-        var(--color-2) 200px,
-        var(--color-1) 600px
-    );
+    /* background-image: linear-gradient(
+        var(--color-1) 200px,
+        var(--color-2) 600px
+    ); */
     background-position: center;
     text-align: center;
     font-family: 'Cabin', sans-serif;
@@ -102,7 +142,6 @@ h6 {
     color: var(--color-5);
 }
 
-h2,
 h4,
 h6 {
     color: var(--color-4);
@@ -175,11 +214,11 @@ main {
 main p {
     padding: 10px;
     line-height: 1.9rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 footer {
     /* background: var(--color-1); */
-    height: 300px;
+    height: 400px;
     padding: 30px;
     padding-top: 2rem;
     color: var(--color-4);
@@ -198,21 +237,27 @@ footer {
 }
 
 section {
-
-    max-width: 700px;
     margin: 0 auto;
     padding: 10% 20%;
 }
+section div.content{
+    max-width: 750px;
+    text-align: center;
+    margin: 0 auto;
+}
 
 main section:first-of-type {
+    max-width: 700px;
     position: relative;
     z-index: 1;
-    padding: 100px 20px 5% 20px;
+    padding: 100px 40px 5% 40px;
+    box-sizing: border-box;
     margin: 3px auto;
     margin-bottom: 10%;
     border-radius: 20px;
     font-size: 1.5rem;
     background-color: var(--color-1);
+    background-image: linear-gradient(60deg, var(--color-1) 25%, rgba(170, 121, 121, 0.15), var(--color-1) 75%);
     opacity: .88;
     margin-top: -100px;
     /* box-shadow: rgb(6 6 6 / 20%) 0px 4px 7px 4px; */
@@ -224,14 +269,121 @@ main section:first-of-type h2 {
     color: var(--color-5);
 }
 
+/* ABOUT */
 #about {
     max-width: 100%;
     background: var(--color-1);
-    background-image: linear-gradient(60deg, var(--color-1), yellow);
+    background-image: linear-gradient(66deg, var(--color-1) 30%, var(--color-o) 100%);
+    z-index: 2;
+    position: relative;
+    color: var(--color-4)
 }
-#about h2 {
+#about:first-child{
+    margin-top: 30px;
+}
+#about:last-child{
+    margin-bottom: 30px;
+}
+#about h2:first-of-type {
+    color: var(--color-5);
+    font-size: 2rem;
+}
+
+#about img{
+    max-width: 80%;
+}
+#about h2.aboutme{
+    color: var(--color-5);
+    font-size: 1.5rem;
+    opacity: .7;
+}
+#about p.aboutme{
+    font-size: 1.1rem;
+}
+#about li{
+    font-size: .9rem;
+    line-height: 2rem;
+}
+
+/* PORTFOLIO */
+#portfolio{
+    max-width: 100%;
+    background: var(--color-1);
+    background-image: linear-gradient(60deg, var(--color-b) -200%, var(--color-1) 50%, var(--color-a) 200%);
+    z-index: 2;
+    position: relative;
     color: var(--color-5);
 }
+.project{
+    /* display: flex; */
+    text-align: left;
+    border-radius: 20px;
+    background-image: linear-gradient(45deg, var(--color-1), var(--color-1));
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+}
+.project h3{
+    padding: 25px 15px;
+    border-radius: 10px 10px 0 0;
+    color: var(--color-1);
+    background-color: var(--color-5);
+    margin-bottom: 0;
+    font-size: 1.8rem;
+    font-weight: 100;
+}
+.project > h4{
+    padding: 10px 15px;
+    background-color: var(--color-2);
+    color: var(--color-4);
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+.project > p{
+    padding: 10px 5% 20px;
+}
+.project-content{
+    max-width: 80%;
+    margin:0 auto;
+    padding-bottom: 30px;
+    
+}
+
+.project ul{
+    margin-bottom: 30px;
+}
+
+.project li{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.05rem
+}
+.project button {
+    min-width: 222px;
+    margin: 0px auto;
+    font-size: 1.2rem;
+    padding: .7rem 1.5rem;
+    display: block;
+    border-radius: .75rem;
+    background-image: linear-gradient(60deg,  var(--color-3) 25%, var(--color-1));
+    cursor: pointer;
+}
+.project button:last-child {
+    margin-top: 6px;
+    background-image: linear-gradient(60deg,  var(--color-u) 5%, var(--color-1));
+    color: var(--color-6);
+}
+/* .project button:hover {
+    margin: -2px auto;
+    margin-bottom: 2px;
+    box-shadow: 0 2px var(--color-5);
+}
+.project button:active {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    box-shadow: inset 0 2px var(--color-5);
+    border-bottom: 0;
+} */
+
 
 /*==========
   Tessallate
@@ -292,13 +444,21 @@ main section:first-of-type h2 {
     }
 }
 
+/* phablets */
+@media screen and (max-width: 860px) {
+    section {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    main section:first-of-type {
+        max-width: 85%;
+    }
+}
+
 /* phones */
 @media screen and (max-width: 640px) {
     section {
         padding-left: 5%;
         padding-right: 5%;
-    }
-    main section:first-of-type {
-        max-width: 85%;
     }
 }

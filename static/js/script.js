@@ -30,7 +30,10 @@ modeSwitch.addEventListener('click', e => {
 
 // root var switcher
 const switchRootVars = (mode) => {
-    ['1', '2', '3', '4', '5', '6'].forEach(num => {
+    const colors = "royugscabvma";
+    const numbers = "123456";
+    const colorsNum = (colors+numbers).split('');
+    colorsNum.forEach(num => {
         let d = getComputedStyle(document.documentElement).getPropertyValue(`--${mode}-${num}`);
         document.documentElement.style.setProperty(`--color-${num}`, d);
     })
@@ -50,3 +53,9 @@ const scrollToObject = (e) => {
         behavior: 'smooth'
     });
 }
+
+// Copyright ending dataset
+const dateTxt = document.body.querySelector('footer span');
+const dateTxtArray = dateTxt.innerText.split('-');
+const currentYear = (new Date).getFullYear();
+dateTxt.innerText = `${dateTxtArray[0]}-${currentYear} ${dateTxtArray[1]}`;
