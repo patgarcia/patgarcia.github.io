@@ -269,6 +269,16 @@ main section:first-of-type h2 {
     color: var(--color-5);
 }
 
+main section:first-of-type button{
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    background-color: var(--color-1);
+    border-width: 3px;;
+    box-shadow: var(--color-6) 0px 5px 1px;
+    color: var(--color-6);
+}
+
 /* ABOUT */
 #about {
     max-width: 100%;
@@ -419,10 +429,12 @@ main section:first-of-type h2 {
 #mouse-coordinates-hud {
     position: fixed;
     right: 0;
-    top: 20px;
+    top: 0px;
     background: linear-gradient(45deg, #999 0%, #ddd 50%);
     padding: 10px 20px;
     min-width: 85px;
+    border-radius: 0 0 0 20px;
+    text-align: left;
 }
 
 /*=============

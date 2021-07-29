@@ -15,7 +15,9 @@ const switchMode = (switcher, className) => {
         switchRootVars('dark')
         switchImgSrc('dark')
     }
-    twoJSChildrenColorNegative();
+    // TODO: pass window tess explicitly here isntead 
+    // of waiting for it to be set on tessellate.js
+    window.tess.twoJSChildrenColorNegative();
 }
 
 
