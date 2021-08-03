@@ -1,72 +1,72 @@
 :root {
-    /* Mode switch vars */
-    --switch-width: 40px;
-    --switch-height: calc(var(--switch-width) / 2);
-    --switch-distance: calc(var(--switch-width) - var(--switch-height));
+  /* Mode switch vars */
+  --switch-width: 40px;
+  --switch-height: calc(var(--switch-width) / 2);
+  --switch-distance: calc(var(--switch-width) - var(--switch-height));
 
-    /* Light mode bw shades */
-    --light-1: rgb(240, 240, 240);
-    --light-2: rgb(200, 200, 200);
-    --light-3: rgb(160, 160, 160);
-    --light-4: rgb(120, 120, 120);
-    --light-5: rgb(60, 60, 60);
-    --light-6: rgb(0, 0, 0);
+  /* Light mode bw shades */
+  --light-1: rgb(240, 240, 240);
+  --light-2: rgb(200, 200, 200);
+  --light-3: rgb(160, 160, 160);
+  --light-4: rgb(120, 120, 120);
+  --light-5: rgb(60, 60, 60);
+  --light-6: rgb(0, 0, 0);
 
-    /* Dark mode bw shades */
-    --dark-1: rgb(0, 0, 0);
-    --dark-2: rgb(60, 60, 60);
-    --dark-3: rgb(120, 120, 120);
-    --dark-4: rgb(160, 160, 160);
-    --dark-5: rgb(200, 200, 200);
-    --dark-6: rgb(240, 240, 240);
-    
-    /* Light mode colors */
-    --light-r: rgb(255, 0, 0);
-    --light-o: rgb(255, 127, 0); /* orange */
-    --light-y: rgb(255, 255, 0);
-    --light-u: rgb(127, 255, 0); /* chartreuse */
-    --light-g: rgb(0, 255, 0);
-    --light-s: rgb(0, 255, 127); /* spring green */
-    --light-c: rgb(0, 255, 255);
-    --light-a: rgb(0, 127, 255); /* Azure */
-    --light-b: rgb(0, 0, 255);
-    --light-v: rgb(127, 0, 255); /* Violet */
-    --light-m: rgb(255, 0, 255);
-    --light-e: rgb(255, 0, 127); /* Rose */
+  /* Dark mode bw shades */
+  --dark-1: rgb(0, 0, 0);
+  --dark-2: rgb(60, 60, 60);
+  --dark-3: rgb(120, 120, 120);
+  --dark-4: rgb(160, 160, 160);
+  --dark-5: rgb(200, 200, 200);
+  --dark-6: rgb(240, 240, 240);
 
-    /* Dark mode colors -- dark negative versions of light */
-    --dark-c: rgb(66, 0, 0);
-    --dark-a: rgb(66, 33, 0);
-    --dark-b: rgb(66, 66, 0);
-    --dark-v: rgb(33, 66, 0);
-    --dark-m: rgb(0, 66, 0);
-    --dark-e: rgb(0, 66, 33);
-    --dark-r: rgb(0, 66, 66);
-    --dark-o: rgb(0, 33, 66);
-    --dark-y: rgb(0, 0, 66);
-    --dark-u: rgb(33, 0, 66);
-    --dark-g: rgb(66, 0, 66);
-    --dark-s: rgb(66, 0, 33);
+  /* Light mode colors */
+  --light-r: rgb(255, 0, 0);
+  --light-o: rgb(255, 127, 0); /* orange */
+  --light-y: rgb(255, 255, 0);
+  --light-u: rgb(127, 255, 0); /* chartreuse */
+  --light-g: rgb(0, 255, 0);
+  --light-s: rgb(0, 255, 127); /* spring green */
+  --light-c: rgb(0, 255, 255);
+  --light-a: rgb(0, 127, 255); /* Azure */
+  --light-b: rgb(0, 0, 255);
+  --light-v: rgb(127, 0, 255); /* Violet */
+  --light-m: rgb(255, 0, 255);
+  --light-e: rgb(255, 0, 127); /* Rose */
 
-    /* Style variables */
-    --color-1: var(--light-1);
-    --color-2: var(--light-2);
-    --color-3: var(--light-3);
-    --color-4: var(--light-4);
-    --color-5: var(--light-5);
-    --color-6: var(--light-6);
-    --color-r: var(--light-r);
-    --color-o: var(--light-o);
-    --color-y: var(--light-y);
-    --color-u: var(--light-u);
-    --color-g: var(--light-g);
-    --color-s: var(--light-s);
-    --color-c: var(--light-c);
-    --color-a: var(--light-a);
-    --color-b: var(--light-b);
-    --color-v: var(--light-v);
-    --color-m: var(--light-m);
-    --color-e: var(--light-e);
+  /* Dark mode colors -- dark negative versions of light */
+  --dark-c: rgb(66, 0, 0);
+  --dark-a: rgb(66, 33, 0);
+  --dark-b: rgb(66, 66, 0);
+  --dark-v: rgb(33, 66, 0);
+  --dark-m: rgb(0, 66, 0);
+  --dark-e: rgb(0, 66, 33);
+  --dark-r: rgb(0, 66, 66);
+  --dark-o: rgb(0, 33, 66);
+  --dark-y: rgb(0, 0, 66);
+  --dark-u: rgb(33, 0, 66);
+  --dark-g: rgb(66, 0, 66);
+  --dark-s: rgb(66, 0, 33);
+
+  /* Style variables */
+  --color-1: var(--light-1);
+  --color-2: var(--light-2);
+  --color-3: var(--light-3);
+  --color-4: var(--light-4);
+  --color-5: var(--light-5);
+  --color-6: var(--light-6);
+  --color-r: var(--light-r);
+  --color-o: var(--light-o);
+  --color-y: var(--light-y);
+  --color-u: var(--light-u);
+  --color-g: var(--light-g);
+  --color-s: var(--light-s);
+  --color-c: var(--light-c);
+  --color-a: var(--light-a);
+  --color-b: var(--light-b);
+  --color-v: var(--light-v);
+  --color-m: var(--light-m);
+  --color-e: var(--light-e);
 }
 
 /*=============
@@ -74,44 +74,44 @@
 =============*/
 
 #mode-switch {
-    width: var(--switch-width);
-    height: var(--switch-height);
-    background: var(--color-6);
-    text-align: left;
-    margin: 20px auto 0;
-    border-radius: var(--switch-height);
-    border: solid var(--color-6);
-    transition: all 0.2s;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  background: var(--color-6);
+  text-align: left;
+  margin: 20px auto 0;
+  border-radius: var(--switch-height);
+  border: solid var(--color-6);
+  transition: all 0.2s;
 }
 #mode-switch span {
-    display: inline-block;
-    height: 100%;
-    width: var(--switch-height);
-    background: var(--color-4);
-    animation: 0.5s lightmode forwards;
-    border-radius: 100%;
+  display: inline-block;
+  height: 100%;
+  width: var(--switch-height);
+  background: var(--color-4);
+  animation: 0.5s lightmode forwards;
+  border-radius: 100%;
 }
 
 .darkmode {
-    animation: 0.5s darkmode !important;
+  animation: 0.5s darkmode !important;
 }
 
 @keyframes lightmode {
-    0% {
-        transform: translate(0, 0);
-    }
-    100% {
-        transform: translate(var(--switch-distance), 0);
-    }
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(var(--switch-distance), 0);
+  }
 }
 
 @keyframes darkmode {
-    0% {
-        transform: translate(var(--switch-distance), 0);
-    }
-    100% {
-        transform: translate(0, 0);
-    }
+  0% {
+    transform: translate(var(--switch-distance), 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
 /*=======
@@ -119,17 +119,17 @@
 =======*/
 
 body {
-    transition: all 1s;
-    background: var(--color-1);
-    background-size: cover;
-    /* background-image: linear-gradient(
+  transition: all 1s;
+  background: var(--color-1);
+  background-size: cover;
+  /* background-image: linear-gradient(
         var(--color-1) 200px,
         var(--color-2) 600px
     ); */
-    background-position: center;
-    text-align: center;
-    font-family: 'Cabin', sans-serif;
-    margin: 0;
+  background-position: center;
+  text-align: center;
+  font-family: 'Cabin', sans-serif;
+  margin: 0;
 }
 
 h1,
@@ -138,249 +138,265 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Merriweather Sans', sans-serif;
-    color: var(--color-5);
+  font-family: 'Merriweather Sans', sans-serif;
+  color: var(--color-5);
 }
 
 h4,
 h6 {
-    color: var(--color-4);
+  color: var(--color-4);
 }
 
 #mode-checkbox {
-    display: none;
+  display: none;
 }
 
 ul {
-    list-style: none;
-    padding: 0;
-    margin-top: -10px;
+  list-style: none;
+  padding: 0;
+  margin-top: -10px;
 }
 li {
-    display: inline-block;
-    font-size: 1.2rem;
+  display: inline-block;
+  font-size: 1.2rem;
 }
 li:not(:last-child)::after {
-    content: '';
-    margin: 5px;
+  content: '';
+  margin: 5px;
 }
-header{
-    position:relative;
+header {
+  position: relative;
 }
 
 header h1 {
-    color: var(--color-5);
-    mix-blend-mode: luminosity;
+  color: var(--color-5);
+  mix-blend-mode: luminosity;
 }
 header li {
-    color: var(--color-4);
-    cursor: pointer;
+  color: var(--color-4);
+  cursor: pointer;
 }
 header li:hover {
-    color: var(--color-5);
-    text-decoration: underline solid;
+  color: var(--color-5);
+  text-decoration: underline solid;
 }
 
 hr {
-    margin: 50px;
-    opacity: 0.3;
+  margin: 50px;
+  opacity: 0.3;
 }
 
 main h1 {
-    margin: 40px auto;
+  margin: 40px auto;
 }
 
 .avatar {
-    width: 50%;
-    max-width: 250px;
-    border-radius: 100%;
-    border: solid 10px;
-    border-color: var(--color-2);
-    position: relative;
-    z-index: 2;
+  width: 50%;
+  max-width: 250px;
+  border-radius: 100%;
+  border: solid 10px;
+  border-color: var(--color-2);
+  position: relative;
+  z-index: 2;
 }
 
 main h4 {
-    margin-top: -10px;
+  margin-top: -10px;
 }
 
 main {
-    padding-top: 30px;
-    margin: 0 auto;
-    color: var(--color-5);
-    width: 100%;
-    text-align: center;
+  padding-top: 30px;
+  margin: 0 auto;
+  color: var(--color-5);
+  width: 100%;
+  text-align: center;
 }
 main p {
-    padding: 10px;
-    line-height: 1.9rem;
-    font-size: 1.3rem;
+  padding: 10px;
+  line-height: 1.9rem;
+  font-size: 1.3rem;
 }
 footer {
-    /* background: var(--color-1); */
-    height: 600px;
-    padding: 30px;
-    padding-top: 2rem;
-    color: var(--color-4);
-    margin-top: 100px;
-    background-size: cover;
-    background-image: url('../img/mountains.png');
-    background-position: center;
+  /* background: var(--color-1); */
+  height: 600px;
+  padding: 30px;
+  padding-top: 2rem;
+  color: var(--color-4);
+  margin-top: 100px;
+  background-size: cover;
+  background-image: url('../img/mountains.png');
+  background-position: center;
 }
 .linkedin {
-    display: block;
-    margin: 0 auto;
-    width: 40%;
+  display: block;
+  margin: 0 auto;
+  width: 40%;
 }
 .svg-dark-mode .dark {
-    filter: invert(1);
+  filter: invert(1);
 }
 
 section {
-    margin: 0 auto;
-    padding: 10% 20%;
+  margin: 0 auto;
+  padding: 10% 20%;
 }
-section div.content{
-    max-width: 750px;
-    text-align: center;
-    margin: 0 auto;
+section div.content {
+  max-width: 750px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 main section:first-of-type {
-    max-width: 700px;
-    position: relative;
-    z-index: 1;
-    padding: 100px 40px 5% 40px;
-    box-sizing: border-box;
-    margin: 3px auto;
-    margin-bottom: 10%;
-    border-radius: 20px;
-    font-size: 1.5rem;
-    background-color: var(--color-1);
-    background-image: linear-gradient(60deg, var(--color-1) 25%, rgba(170, 121, 121, 0.15), var(--color-1) 75%);
-    opacity: .88;
-    margin-top: -100px;
-    /* box-shadow: rgb(6 6 6 / 20%) 0px 4px 7px 4px; */
+  max-width: 700px;
+  position: relative;
+  z-index: 1;
+  padding: 100px 40px 5% 40px;
+  box-sizing: border-box;
+  margin: 3px auto;
+  margin-bottom: 10%;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  background-color: var(--color-1);
+  background-image: linear-gradient(
+    60deg,
+    var(--color-1) 25%,
+    rgba(170, 121, 121, 0.15),
+    var(--color-1) 75%
+  );
+  opacity: 0.88;
+  margin-top: -100px;
+  /* box-shadow: rgb(6 6 6 / 20%) 0px 4px 7px 4px; */
 }
 /* background-image: linear-gradient(0deg, rgba(255,255,255,0) 0%, var(--color-1) 20%, var(--color-1) 80%, rgba(255,255,255,0) 100%);  */
 /* box-shadow: 0 3px 10px -1px; */
 
 main section:first-of-type h2 {
-    color: var(--color-5);
+  color: var(--color-5);
 }
 
-main section:first-of-type button{
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 1.5rem;
-    background-color: var(--color-1);
-    border-width: 3px;;
-    box-shadow: var(--color-6) 0px 5px 1px;
-    color: var(--color-6);
+main section:first-of-type button,
+.tessellate-button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  background-color: var(--color-1);
+  border-width: 3px;
+  box-shadow: var(--color-6) 0px 5px 1px;
+  color: var(--color-6);
+  display: block;
+  margin: auto;
 }
 
 /* ABOUT */
 #about {
-    max-width: 100%;
-    background: var(--color-1);
-    background-image: linear-gradient(66deg, var(--color-1) 30%, var(--color-o) 100%);
-    z-index: 2;
-    position: relative;
-    color: var(--color-4)
+  max-width: 100%;
+  background: var(--color-1);
+  background-image: linear-gradient(
+    66deg,
+    var(--color-1) 30%,
+    var(--color-o) 100%
+  );
+  z-index: 2;
+  position: relative;
+  color: var(--color-4);
 }
-#about:first-child{
-    margin-top: 30px;
+#about:first-child {
+  margin-top: 30px;
 }
-#about:last-child{
-    margin-bottom: 30px;
+#about:last-child {
+  margin-bottom: 30px;
 }
 #about h2:first-of-type {
-    color: var(--color-5);
-    font-size: 2rem;
+  color: var(--color-5);
+  font-size: 2rem;
 }
 
-#about img{
-    max-width: 80%;
+#about img {
+  max-width: 80%;
 }
-#about h2.aboutme{
-    color: var(--color-5);
-    font-size: 1.5rem;
-    opacity: .7;
+#about h2.aboutme {
+  color: var(--color-5);
+  font-size: 1.5rem;
+  opacity: 0.7;
 }
-#about p.aboutme{
-    font-size: 1.1rem;
+#about p.aboutme {
+  font-size: 1.1rem;
 }
-#about li{
-    font-size: .9rem;
-    line-height: 2rem;
+#about li {
+  font-size: 0.9rem;
+  line-height: 2rem;
 }
 
 /* PORTFOLIO */
-#portfolio{
-    max-width: 100%;
-    background: var(--color-1);
-    background-image: linear-gradient(60deg, var(--color-b) -200%, var(--color-1) 50%, var(--color-a) 200%);
-    z-index: 2;
-    position: relative;
-    color: var(--color-5);
+#portfolio {
+  max-width: 100%;
+  background: var(--color-1);
+  background-image: linear-gradient(
+    60deg,
+    var(--color-b) -200%,
+    var(--color-1) 50%,
+    var(--color-a) 200%
+  );
+  z-index: 2;
+  position: relative;
+  color: var(--color-5);
 }
-.project{
-    /* display: flex; */
-    text-align: left;
-    border-radius: 20px;
-    background-image: linear-gradient(45deg, var(--color-1), var(--color-1));
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+.project {
+  /* display: flex; */
+  text-align: left;
+  border-radius: 20px;
+  background-image: linear-gradient(45deg, var(--color-1), var(--color-1));
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.project h3 {
+  padding: 25px 15px;
+  border-radius: 10px 10px 0 0;
+  color: var(--color-1);
+  background-color: var(--color-5);
+  margin-bottom: 0;
+  font-size: 1.8rem;
+  font-weight: 100;
+}
+.project > h4 {
+  padding: 10px 15px;
+  background-color: var(--color-2);
+  color: var(--color-4);
+  font-size: 1.2rem;
+  font-weight: 100;
+}
+.project > p {
+  padding: 10px 5% 20px;
+}
+.project-content {
+  max-width: 80%;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
 
-}
-.project h3{
-    padding: 25px 15px;
-    border-radius: 10px 10px 0 0;
-    color: var(--color-1);
-    background-color: var(--color-5);
-    margin-bottom: 0;
-    font-size: 1.8rem;
-    font-weight: 100;
-}
-.project > h4{
-    padding: 10px 15px;
-    background-color: var(--color-2);
-    color: var(--color-4);
-    font-size: 1.2rem;
-    font-weight: 100;
-}
-.project > p{
-    padding: 10px 5% 20px;
-}
-.project-content{
-    max-width: 80%;
-    margin:0 auto;
-    padding-bottom: 30px;
-    
+.project ul {
+  margin-bottom: 30px;
 }
 
-.project ul{
-    margin-bottom: 30px;
-}
-
-.project li{
-    display: block;
-    margin-bottom: 5px;
-    font-size: 1.05rem
+.project li {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.05rem;
 }
 .project button {
-    min-width: 222px;
-    margin: 0px auto;
-    font-size: 1.2rem;
-    padding: .7rem 1.5rem;
-    display: block;
-    border-radius: .75rem;
-    background-image: linear-gradient(60deg,  var(--color-3) 25%, var(--color-1));
-    cursor: pointer;
+  min-width: 222px;
+  margin: 0px auto;
+  font-size: 1.2rem;
+  padding: 0.7rem 1.5rem;
+  display: block;
+  border-radius: 0.75rem;
+  background-image: linear-gradient(60deg, var(--color-3) 25%, var(--color-1));
+  cursor: pointer;
 }
 .project button:last-child {
-    margin-top: 6px;
-    background-image: linear-gradient(60deg,  var(--color-u) 5%, var(--color-1));
-    color: var(--color-6);
+  margin-top: 6px;
+  background-image: linear-gradient(60deg, var(--color-u) 5%, var(--color-1));
+  color: var(--color-6);
 }
 /* .project button:hover {
     margin: -2px auto;
@@ -394,32 +410,31 @@ main section:first-of-type button{
     border-bottom: 0;
 } */
 
-
 /*==========
   Tessallate
  ===========*/
 
 .two-container {
-    opacity: 0;
-    /* height: 0; */
-    /* z-index: 1; */
-    /* position: absolute;
+  opacity: 0;
+  /* height: 0; */
+  /* z-index: 1; */
+  /* position: absolute;
      top: 180px; */
 }
 
 .two-container svg {
-    overflow: visible !important;
+  overflow: visible !important;
 }
 
 .two-container svg path {
-    transition: fill 0.5s, transform 0.3s, opacity 0.05s;
-    transform-origin: center center;
-    transform-box: fill-box;
+  transition: fill 0.5s, transform 0.3s, opacity 0.05s;
+  transform-origin: center center;
+  transform-box: fill-box;
 }
 /* path + path:hover transition create polygon trail fx */
 
 .two-container svg path:hover {
-    transition: fill 0s;
+  transition: fill 0s;
 }
 
 /* body {
@@ -427,14 +442,64 @@ main section:first-of-type button{
     } */
 
 #mouse-coordinates-hud {
-    position: fixed;
-    right: 0;
-    top: 0px;
-    background: linear-gradient(45deg, #999 0%, #ddd 50%);
-    padding: 10px 20px;
-    min-width: 85px;
-    border-radius: 0 0 0 20px;
-    text-align: left;
+  position: fixed;
+  right: 0;
+  top: 0px;
+  background: linear-gradient(45deg, #999 0%, #ddd 50%);
+  padding: 10px 20px;
+  min-width: 85px;
+  border-radius: 0 0 0 20px;
+  text-align: left;
+}
+
+/*=============
+    Controls
+==============*/
+
+.controls {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.controls button {
+  font-size: 1.2rem;
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: var(--color-4);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: var(--color-r);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: var(--color-r);
+  cursor: pointer;
 }
 
 /*=============
@@ -443,34 +508,34 @@ main section:first-of-type button{
 
 /* screens */
 @media screen and (min-width: 2000px) {
-    section {
-        padding: 6% 25%;
-    }
+  section {
+    padding: 6% 25%;
+  }
 }
 
 /* tablets */
 @media screen and (max-width: 1007px) {
-    section {
-        padding-left: 15%;
-        padding-right: 15%;
-    }
+  section {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
 }
 
 /* phablets */
 @media screen and (max-width: 860px) {
-    section {
-        padding-left: 15%;
-        padding-right: 15%;
-    }
-    main section:first-of-type {
-        max-width: 85%;
-    }
+  section {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+  main section:first-of-type {
+    max-width: 85%;
+  }
 }
 
 /* phones */
 @media screen and (max-width: 640px) {
-    section {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
+  section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }
