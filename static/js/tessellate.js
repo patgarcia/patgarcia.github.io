@@ -401,15 +401,26 @@ function createTessellate(
   let randomEnd = randomStart + 0.2;
 
   // generate initial point within 0 and 0.8 (randomStart) for both axes
-  const P1 = point(
+  let P1 = point(
     getRandomDecimal((start = randomStart), (stop = randomStart)) * density,
     getRandomDecimal((start = randomStart), (stop = randomStart)) * density
   );
   // generate subsequent point 0.2 decimals from randomStart in both axes
-  const P2 = point(
+  let P2 = point(
     getRandomDecimal((start = randomEnd), (stop = randomEnd)) * density,
     getRandomDecimal((start = randomEnd), (stop = randomEnd)) * density
   );
+
+  // limit P1 and P2 to be inside window.innerWidth and window.innerHeight
+  function adjustPoint(point) {
+    if (point.x > window.innerWidth) {
+      point.x = point.x - window.innerWidth;
+      point.y = point.y - window.innerWidth;
+    }
+    return point;
+  }
+  P1 = adjustPoint(P1);
+  P2 = adjustPoint(P2);
 
   const initLine = lineFactory(P1, P2);
 
@@ -513,8 +524,7 @@ function createTessellate(
   };
 
   this.tessellate = function (line) {
-    const P1 = line.P1;
-    const P2 = line.P2;
+    const { P1, P2 } = line;
 
     const oppEpsilonPositive = getOrthogonalProjectionPoint(
       line,
@@ -552,9 +562,9 @@ function createTessellate(
       stopVal
     );
   };
+  window.line = initLine;
 
   this.tessellate(initLine);
-
   /*==============
     MOUSE DISPLAY
     ==============*/
@@ -579,8 +589,6 @@ function createTessellate(
       }
       child.stroke = darkenColor(child.color);
     });
-    // console.log(document.body.style.background)
-    // document.body.style.background = invertColors(document.body.style.background);
   };
 
   window.two = two;
@@ -684,6 +692,7 @@ function createTessellate(
 =====================*/
 
 function removeControls() {
+  console.log('removeControls called');
   document.querySelector('.controls').remove();
 }
 
@@ -806,12 +815,20 @@ function interactiveTessellate() {
 }
 
 /*=============
+  DOWNLOAD IMAGE
+=============*/
+function downloadImage() {
+  const svg = document.querySelector('svg');
+}
+
+/*=============
   WINDOW READY
 =============*/
 
 // TODO: Move resize handler inside createTessellate
 function resizeHandler(ev) {
   window.removeEventListener('resize', ev => {
+    removeControls();
     tess.destroyTessellate();
   });
 }
