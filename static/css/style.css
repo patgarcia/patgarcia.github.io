@@ -467,6 +467,23 @@ main section:first-of-type button,
   font-size: 1.2rem;
 }
 
+.hud {
+  height: 40px;
+  font-size: 30px;
+  text-align: center;
+  transition: opacity 1s;
+}
+
+.hud-danger {
+  font-size: 1.2rem;
+  color: white;
+  background-color: red;
+  position: fixed;
+  top: 10px;
+  display: block;
+  padding: 10px 20px;
+}
+
 .slidecontainer {
   width: 100%;
 }

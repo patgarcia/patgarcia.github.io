@@ -753,16 +753,51 @@ function interactiveTessellate() {
   controls = document.createElement('div');
   controls.className = 'controls';
 
+  // content display HUD
+  hud = document.createElement('div');
+  hud.className = 'hud';
+  controls.appendChild(hud);
+
+  let timeOut;
+  let intervalId;
+  function hudContentChange(ev) {
+    intervalId = setInterval(() => {
+      hud.innerText = '';
+      hud.style.opacity = 1;
+      const input = ev.target;
+      const label = input.getAttribute('data-hud');
+      let danger = '';
+      if (input.name === 'size' && input.value < 300) {
+        danger =
+          "<span class='hud-danger'>🛑 Polygons smaller than 300, may take long to render if polygon density too high.</span>";
+      }
+      hud.innerHTML = `${label}: ${input.value} ${danger}`;
+      clearTimeout(timeOut);
+      timeOut = setTimeout(() => hudClear(), 600);
+    }, 100);
+  }
+  function clearIntervalID(ev) {
+    clearInterval(intervalId);
+  }
+
+  function hudClear() {
+    console.log('HUD CLEAR RAN');
+    hud.style.opacity = 0;
+  }
+
   // TODO: handle input instantiation with a loop
   // density (size)
   input = document.createElement('input');
   input.type = 'range';
   input.onchange = handleChange;
+  input.onmousedown = hudContentChange;
+  input.onmouseup = clearIntervalID;
   input.min = 50;
   input.max = 1000;
   input.value = 300;
   input.className = 'slider';
   input.name = 'size';
+  input.setAttribute('data-hud', 'polygon size');
   controls.appendChild(input);
 
   // limit (tessellationLimit)
@@ -771,21 +806,27 @@ function interactiveTessellate() {
   input = document.createElement('input');
   input.type = 'range';
   input.onchange = handleChange;
+  input.onmousedown = hudContentChange;
+  input.onmouseup = clearIntervalID;
   input.min = 100;
   input.max = 2000;
   input.value = 50;
   input.className = 'slider';
   input.name = 'limit';
+  input.setAttribute('data-hud', 'polygon density');
   controls.appendChild(input);
 
   // startVal (size)
   input = document.createElement('input');
   input.type = 'range';
   input.onchange = handleChange;
+  input.onmousedown = hudContentChange;
+  input.onmouseup = clearIntervalID;
   input.min = 10;
   input.max = 90;
   input.value = 50;
   input.className = 'slider';
+  input.setAttribute('data-hud', 'distort factor A');
   input.name = 'startVal';
   controls.appendChild(input);
 
@@ -793,10 +834,13 @@ function interactiveTessellate() {
   input = document.createElement('input');
   input.type = 'range';
   input.onchange = handleChange;
+  input.onmousedown = hudContentChange;
+  input.onmouseup = clearIntervalID;
   input.min = 10;
   input.max = 90;
   input.value = 50;
   input.className = 'slider';
+  input.setAttribute('data-hud', 'distort factor B');
   input.name = 'stopVal';
   controls.appendChild(input);
 
