@@ -564,6 +564,12 @@ function createTessellate(
   };
   window.line = initLine;
 
+  // funky adjustment to check if warning is showing
+  const dangerHud = document.querySelector('.hud-danger');
+  window.dan = dangerHud;
+  console.log(dangerHud);
+  if (dangerHud) dangerHud.remove();
+
   this.tessellate(initLine);
   /*==============
     MOUSE DISPLAY
@@ -776,8 +782,9 @@ function interactiveTessellate() {
       timeOut = setTimeout(() => hudClear(), 600);
     }, 100);
   }
-  function clearIntervalID(ev) {
+  function redrawTessellate(ev) {
     clearInterval(intervalId);
+    handleChange(null);
   }
 
   function hudClear() {
@@ -789,9 +796,10 @@ function interactiveTessellate() {
   // density (size)
   input = document.createElement('input');
   input.type = 'range';
-  input.onchange = handleChange;
   input.onmousedown = hudContentChange;
-  input.onmouseup = clearIntervalID;
+  input.onmouseup = redrawTessellate;
+  input.addEventListener('touchstart', hudContentChange);
+  input.addEventListener('touchend', redrawTessellate);
   input.min = 50;
   input.max = 1000;
   input.value = 300;
@@ -805,9 +813,10 @@ function interactiveTessellate() {
 
   input = document.createElement('input');
   input.type = 'range';
-  input.onchange = handleChange;
   input.onmousedown = hudContentChange;
-  input.onmouseup = clearIntervalID;
+  input.onmouseup = redrawTessellate;
+  input.addEventListener('touchstart', hudContentChange);
+  input.addEventListener('touchend', redrawTessellate);
   input.min = 100;
   input.max = 2000;
   input.value = 50;
@@ -819,9 +828,10 @@ function interactiveTessellate() {
   // startVal (size)
   input = document.createElement('input');
   input.type = 'range';
-  input.onchange = handleChange;
   input.onmousedown = hudContentChange;
-  input.onmouseup = clearIntervalID;
+  input.onmouseup = redrawTessellate;
+  input.addEventListener('touchstart', hudContentChange);
+  input.addEventListener('touchend', redrawTessellate);
   input.min = 10;
   input.max = 90;
   input.value = 50;
@@ -833,9 +843,10 @@ function interactiveTessellate() {
   // stopVal (size)
   input = document.createElement('input');
   input.type = 'range';
-  input.onchange = handleChange;
   input.onmousedown = hudContentChange;
-  input.onmouseup = clearIntervalID;
+  input.onmouseup = redrawTessellate;
+  input.addEventListener('touchstart', hudContentChange);
+  input.addEventListener('touchend', redrawTessellate);
   input.min = 10;
   input.max = 90;
   input.value = 50;

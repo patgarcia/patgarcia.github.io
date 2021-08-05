@@ -472,6 +472,7 @@ main section:first-of-type button,
   font-size: 30px;
   text-align: center;
   transition: opacity 1s;
+  color: var(--color-6);
 }
 
 .hud-danger {
