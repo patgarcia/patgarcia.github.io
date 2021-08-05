@@ -564,10 +564,9 @@ function createTessellate(
   };
   window.line = initLine;
 
-  // funky adjustment to check if warning is showing
+  // check if warning is showing
   const dangerHud = document.querySelector('.hud-danger');
   window.dan = dangerHud;
-  console.log(dangerHud);
   if (dangerHud) dangerHud.remove();
 
   this.tessellate(initLine);
@@ -698,7 +697,6 @@ function createTessellate(
 =====================*/
 
 function removeControls() {
-  console.log('removeControls called');
   document.querySelector('.controls').remove();
 }
 
@@ -742,7 +740,7 @@ function resetInteractiveTessellate() {
 }
 
 function interactiveTessellate() {
-  window.tess.destroyTessellate(300, null, true);
+  // window.tess.destroyTessellate(300, null, true);
 
   // Move to top of window
   window.scrollTo(0, 0);
@@ -792,79 +790,49 @@ function interactiveTessellate() {
     hud.style.opacity = 0;
   }
 
+  const inputs = [
+    { name: 'size', min: 50, max: 1000, val: 300, data: 'polygon size' },
+    { name: 'limit', min: 100, max: 2000, val: 100, data: 'polygon density' },
+    {
+      name: 'startVal',
+      min: 10,
+      max: 90,
+      val: 50,
+      data: 'distort factor A',
+    },
+    { name: 'stopVal', min: 10, max: 90, val: 50, data: 'distort factor B' },
+  ];
   // TODO: handle input instantiation with a loop
   // density (size)
-  input = document.createElement('input');
-  input.type = 'range';
-  input.onmousedown = hudContentChange;
-  input.onmouseup = redrawTessellate;
-  input.addEventListener('touchstart', hudContentChange);
-  input.addEventListener('touchend', redrawTessellate);
-  input.min = 50;
-  input.max = 1000;
-  input.value = 300;
-  input.className = 'slider';
-  input.name = 'size';
-  input.setAttribute('data-hud', 'polygon size');
-  controls.appendChild(input);
+  inputs.forEach(inputObj => {
+    input = document.createElement('input');
+    input.type = 'range';
+    input.onmousedown = hudContentChange;
+    input.onmouseup = redrawTessellate;
+    input.addEventListener('touchstart', hudContentChange);
+    input.addEventListener('touchend', redrawTessellate);
+    input.min = inputObj.min;
+    input.max = inputObj.max;
+    input.value = inputObj.val;
+    input.className = 'slider';
+    input.name = inputObj.name;
+    input.setAttribute('data-hud', inputObj.data);
+    controls.appendChild(input);
+  });
 
-  // limit (tessellationLimit)
-  // if null it's calculated based on window width
+  const buttons = [
+    { name: 'svg', callback: downloadImage },
+    { name: 'png', callback: downloadImage },
+    { name: 'reset', callback: resetInteractiveTessellate },
+    { name: 'close', callback: closeInteractiveTessellate },
+  ];
 
-  input = document.createElement('input');
-  input.type = 'range';
-  input.onmousedown = hudContentChange;
-  input.onmouseup = redrawTessellate;
-  input.addEventListener('touchstart', hudContentChange);
-  input.addEventListener('touchend', redrawTessellate);
-  input.min = 100;
-  input.max = 2000;
-  input.value = 50;
-  input.className = 'slider';
-  input.name = 'limit';
-  input.setAttribute('data-hud', 'polygon density');
-  controls.appendChild(input);
-
-  // startVal (size)
-  input = document.createElement('input');
-  input.type = 'range';
-  input.onmousedown = hudContentChange;
-  input.onmouseup = redrawTessellate;
-  input.addEventListener('touchstart', hudContentChange);
-  input.addEventListener('touchend', redrawTessellate);
-  input.min = 10;
-  input.max = 90;
-  input.value = 50;
-  input.className = 'slider';
-  input.setAttribute('data-hud', 'distort factor A');
-  input.name = 'startVal';
-  controls.appendChild(input);
-
-  // stopVal (size)
-  input = document.createElement('input');
-  input.type = 'range';
-  input.onmousedown = hudContentChange;
-  input.onmouseup = redrawTessellate;
-  input.addEventListener('touchstart', hudContentChange);
-  input.addEventListener('touchend', redrawTessellate);
-  input.min = 10;
-  input.max = 90;
-  input.value = 50;
-  input.className = 'slider';
-  input.setAttribute('data-hud', 'distort factor B');
-  input.name = 'stopVal';
-  controls.appendChild(input);
-
-  button = document.createElement('button');
-  button.innerText = 'reset';
-  button.onclick = resetInteractiveTessellate;
-  controls.appendChild(button);
-  // <input type="range" min="1" max="100" value="50" class="slider" id="myRange"></input>
-
-  button = document.createElement('button');
-  button.innerText = 'close';
-  button.onclick = closeInteractiveTessellate;
-  controls.appendChild(button);
+  buttons.forEach(buttonObj => {
+    const button = document.createElement('button');
+    button.innerText = buttonObj.name;
+    button.onclick = buttonObj.callback;
+    controls.appendChild(button);
+  });
 
   document.body.prepend(controls);
 }
@@ -872,30 +840,96 @@ function interactiveTessellate() {
 /*=============
   DOWNLOAD IMAGE
 =============*/
-function downloadImage() {
-  const svg = document.querySelector('svg');
+function downloadImage(ev) {
+  const type = ev.target.innerText;
+  const svg = window.two.renderer.domElement;
+
+  // Branding text
+  let msg = 'patgarcia.github.io';
+  let posX = svg.clientWidth;
+  let posY = svg.clientHeight;
+  const txt = window.two.makeText(msg, posX, posY);
+  txt.size = 18;
+  const txtColor = window.getComputedStyle(document.body).color;
+  txt.color = txtColor;
+  window.txt = txt;
+  const { width: offsetX, height: offsetY } = txt.getBoundingClientRect();
+  const vector = txt.translation;
+  vector.x = svg.clientWidth - offsetX / 2;
+  vector.y = svg.clientHeight - (offsetY * txt.size) / 10;
+  txt.translation = vector;
+
+  window.two.update();
+  // get SVG and serialize its data to XML binary string
+  const xmlBinaryStr = new XMLSerializer().serializeToString(svg);
+  // https://stackoverflow.com/a/45334496/5727431
+  // convert to base64
+  // bota method creates a Base64-encoded ASCII string from a binary string
+  const svg64 = btoa(xmlBinaryStr);
+  const svg64Start = 'data:image/svg+xml;base64,';
+  const imgData = svg64Start + svg64;
+  let data;
+  const a = document.createElement('a');
+  if (type === 'svg') {
+    data = imgData;
+    window.dat = data;
+    a.href = data;
+    a.download = `tessellate_art--patgarcia.github.io.${type}`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    txt.remove();
+  } else {
+    var img = document.createElement('img');
+    var canvas = document.createElement('canvas');
+    // Match canvas dimension to svg element
+    canvas.width = svg.clientWidth;
+    canvas.height = svg.clientHeight;
+    // Call back for when image finishes loading
+    img.onload = function () {
+      const ctx = canvas.getContext('2d');
+      // Add background color to canvas
+      const bgColor = window.getComputedStyle(document.body).backgroundColor;
+      ctx.fillStyle = bgColor;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      // Draw svg image on canvas
+      ctx.drawImage(img, 0, 0);
+      a.href = canvas
+        .toDataURL('image/png', 1)
+        .replace('image/png', 'image/octet-stream');
+      a.download = `tessellate_art--patgarcia.github.io.${type}`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      txt.remove();
+    };
+    // Load image
+    img.src = imgData;
+  }
 }
 
 /*=============
   WINDOW READY
 =============*/
 
-// TODO: Move resize handler inside createTessellate
-function resizeHandler(ev) {
-  window.removeEventListener('resize', ev => {
-    removeControls();
-    tess.destroyTessellate();
-  });
-}
-
+// TODO: Handle resizing while interactive tessellate is active
 window.onload = () => {
   window.tess = createTessellate(300);
   tess.getTessellate();
+  // Use previous with to check for width changes on resize
   window.prevWidth = window.innerWidth;
   window.addEventListener('resize', ev => {
     if (ev.target.innerWidth !== window.prevWidth) {
+      controls = document.querySelector('.controls');
+      if (controls) closeInteractiveTessellate();
       tess.destroyTessellate();
       window.prevWidth = ev.target.innerWidth;
     }
   });
+  const queryParams = new URLSearchParams(window.location.search);
+  const parmasObj = Object.fromEntries(queryParams);
+  if ('interactive' in parmasObj) {
+    console.log('intaractive true');
+    interactiveTessellate();
+  }
 };
