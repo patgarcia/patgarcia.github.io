@@ -736,6 +736,7 @@ function handleChange(ev) {
 
 function resetInteractiveTessellate() {
   removeControls();
+  destroyTessellate(300, null, true);
   interactiveTessellate();
 }
 
