@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pattern Maker</title>
+  <!-- query params ?shape=6&adj=53&opp=53&dx=50&dy=50&dpx=-5&dpy=-4&angle=0&steps=11&stroke=14&alpha=59 -->
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .ranges {
+      text-align: center;
+    }
+
+    .range-label {
+      margin: 10px auto;
+      width: 50%;
+      max-width: 500px;
+      height: 30px;
+      text-align: center;
+    }
+
+    .buttons {
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    button {
+      border-radius: 10px;
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas></canvas>
+  <div class="ranges"></div>
+  <div class="buttons">
+    <button onclick="downloadImage()">Download Image</button>
+    <button onclick="copyToClipboard(createSherableURL())">Copy Shareable URL</button>
+  </div>
+  <div class="range-label"></div>
+</body>
+<script src="pattrn_mkr_min.js"></script>
+
+</html>
