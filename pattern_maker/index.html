@@ -5,45 +5,47 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.1/css/all.css"
+    integrity="sha384-B9BoFFAuBaCfqw6lxWBZrhg/z4NkwqdBci+E+Sc2XlK/Rz25RYn8Fetb+Aw5irxa" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;200;400&display=swap" rel="stylesheet">
   <title>Pattern Maker</title>
-  <!-- query params ?shape=6&adj=53&opp=53&dx=50&dy=50&dpx=-5&dpy=-4&angle=0&steps=11&stroke=14&alpha=59 -->
-  <style>
-    body {
-      margin: 0;
-    }
-
-    .ranges {
-      text-align: center;
-    }
-
-    .range-label {
-      margin: 10px auto;
-      width: 50%;
-      max-width: 500px;
-      height: 30px;
-      text-align: center;
-    }
-
-    .buttons {
-      margin: 20px auto;
-      text-align: center;
-    }
-
-    button {
-      border-radius: 10px;
-      padding: 5px 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="slider.css">
 </head>
 
 <body>
   <canvas></canvas>
-  <div class="ranges"></div>
-  <div class="buttons">
-    <button onclick="downloadImage()">Download Image</button>
-    <button onclick="copyToClipboard(createSherableURL())">Copy Shareable URL</button>
+  <div id="pattern_ui" class="ui-transition">
+    <div class="menu">
+      <i class="fas fa-eye" onclick="toggleMenuTransparency()" data-name="eye" data-rep="1"></i>
+      <i class="fas fa-eye-slash hidden" onclick="toggleMenuTransparency()" data-name="eye" data-rep="0"></i>
+      <i class="fas fa-play" id="play-icon" onclick="handlePlay()" data-name="play" data-rep="1"></i>
+      <i class="fas fa-stop hidden" id="stop-icon" onclick="handleStop()" data-name="play" data-rep="0"></i>
+      <i class="fas fa-sliders-h" onclick="toggleUIMenu()"></i>
+    </div>
+    <div class="ranges scroll"></div>
+    <div class="buttons">
+      <button onclick="downloadImage()">get image <i class="fas fa-file-download"></i></button>
+      <button onclick="copyToClipboard(createSherableURL())">share design <i class="fas fa-share"></i></button>
+    </div>
+    <div class="range-label"></div>
+    <h3 class="animation-title"> animation area <span onclick="handleFrameFitting()" data-fitted="0">FIT</span>
+    </h3>
+
+    <button id="animation-share" onclick="copyAnimationToClipboard()">share animation <i
+        class="fas fa-share"></i></button>
+    <p id="patricio">©copyright <span>2021</span> patricio garcia</p>
+    <script>
+      const patricio = document.getElementById('patricio')
+      const year = new Date().getFullYear().toString()
+      const start_year = patricio.children[0].innerText.trim()
+      const date = year === start_year ? year : `${start_year}-${year}`
+      patricio.children[0].innerText = date;
+    </script>
+
   </div>
-  <div class="range-label"></div>
 </body>
 <script src="pattrn_mkr_min.js"></script>
 
