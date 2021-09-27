@@ -251,6 +251,123 @@ div.frame {
   color: #222;
 }
 
+/* SHARE DIALOG */
+
+a.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #bbbbbb;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 24px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 7px;
+}
+
+.dialog-title {
+  color: #bbb;
+}
+
+.share-dialog {
+  font-family: 'MuseoModerno';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.share-dialog {
+  display: none;
+  width: 95%;
+  max-width: 500px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  z-index: -1;
+  border: 10px solid #9a9a9a38;
+  padding: 20px;
+  border-radius: 30px;
+  background-color: #282828f5;
+}
+
+.share-dialog header {
+  /* color: #48e9b5; */
+  font-size: 2rem;
+  /* line-height: 0rem; */
+}
+.share-dialog .error-message {
+  color: #ccc;
+}
+
+.share-dialog.is-open {
+  display: block;
+  z-index: 99999;
+}
+
+.share-dialog h5 {
+  /* color: #0b7a56; */
+  font-weight: 400;
+}
+
+.dialog-title {
+  margin-bottom: 20px;
+  line-height: 2.2rem;
+}
+
+.targets {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  margin-bottom: 20px;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #aeaeae;
+}
+
+div.link input {
+  border: none;
+  background-color: #ffffff00;
+  font: inherit;
+  width: 80%;
+  text-align: center;
+}
+
+.close-button {
+  background: inherit !important;
+  border: none;
+  padding: 0;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.close-button svg {
+  margin-right: 0;
+  color: #bbb;
+}
+.close-button:hover {
+  color: #fff;
+}
+
 @media screen and (max-width: 600px) {
   .ranges {
     height: 20vh;
