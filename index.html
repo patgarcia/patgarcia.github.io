@@ -49,42 +49,51 @@
 	<main>
 		<!-- <img class="avatar mode-tag" src="static/img/avatar_light_new.jpg" data-light="static/img/avatar_light_new.jpg"
 			data-dark="static/img/avatar_dark.jpg"> -->
-			<spline-viewer url="https://prod.spline.design/08i3nUNCm3DE7yi4/scene.splinecode" background="rgba(255,255,255,0)" style="cursor: grab;"></spline-viewer>
+			<spline-viewer url="https://prod.spline.design/08i3nUNCm3DE7yi4/scene.splinecode" background="rgba(255,255,255,0)" style="cursor: grab; height: max(max(40vw, 40vh), 666px)"></spline-viewer>
 		<section>
-			<h2>Hi! 👋 I'm Patricio</h2>
-			<h4>a web developer located in&nbsp;Durham,&nbsp;NC.</h4>
-			<p>Product lead turned software developer, I'm a passionate problem-solver with a knack for geometry and drone
-				flying. My code preference is readable, performant, and concise, in that order. I use Django/React for Fullstack
-				and Python for data science.</p>
-			<p>This website is intended for professional use as <b onclick="scrollToObject(this)" data-href="portfolio"
+			<h2>Hello. I'm Patricio.</h2>
+			<h4>Senior Fullstack Developer located in the Bay&nbsp;Area.</h4>
+			<p>I'm a passionate problem-solver with a deep love for geometry, a knack for drone
+				flying. I also enjoy riding eletric vehicles of all kind. </p>
+			<p>This website serves as <b onclick="scrollToObject(this)" data-href="portfolio"
 					style="text-decoration: underline; font-weight: 100; color: var(--color-6)">my portfolio</b>, but my design
-				intention is for it to be an enjoyable experience for most. </p>
-			<p>I also write small format articles explaining code or sharing dev tips you can find at <a href="https://medium.com/zbytes">zbytes</a> on Medium.</p>
+				intention is for it be an enjoyable digital art installation. </p>
+
+			<!-- <p>I also write small format articles explaining code or sharing dev tips you can find at <a href="https://medium.com/zbytes">zbytes</a> on Medium.</p> -->
 			<!-- <h3>❉</h3> -->
 			<!-- Onclick assummes createTessellate factory has been called and assigned to var tess, from tessellate.js -->
-			<button onclick="tess.destroyTessellate()">regenerate tessellate</button>
+			<button onclick="tess.destroyTessellate()" style="cursor: pointer">recreate background</button>
 		</section>
 		<section id="about" class="inver-color">
 			<div class="content">
 				<img class="mode-tag" src="static/img/tessellate_light.png" data-light="static/img/tessellate_light.png"
 					data-dark="static/img/tessellate_dark.png">
-				<h2>about mul·ti·fac·et·ed</h2>
-				<p>Multifaceted is both, my portfolio and a web art installation. As an art piece it aims to represent the
+				<h2>What's mul·ti·fac·et·ed?</h2>
+
+				<p>It is a conceptual representation that pays homage to the multi-dimensional nature of reality
+					The end goal is to use the tesselate background in an interactive way to share the different facets of my own multi-dimensionality.
+				</p>
+				<!-- <p>Multifaceted is both, my portfolio and a web art installation. As an art piece it aims to represent the
 					multi-dimensional nature of people. It leverages an interactive tessellate as a discovery tool to explore the
-					different facets of myself.</p>
+					different facets of myself.</p> -->
 				<button style="margin-bottom: 20px;" class="tessellate-button" onclick="interactiveTessellate()">interactive
 					tessellate ⚙︎</button>
 				<code>version 0.1.0 -- downloadable image</code>
-				<!-- <button>Play with the tessellate</button> -->
 			</div>
 			<hr>
 			<div class="content">
 				<h2 class="aboutme">about me</h2>
-				<p class="aboutme">The story of how I chose web development as a career is a long and winded one, but in short,
+				<h3>My first priority in life is cultivating self-awareness, <br />my second one is playing.</h3>
+				<p class="aboutme">
+
+					Play has taken many forms for me, building and flying my own drones, 3D printing, riding electrical vehicles of all sorts; but 
+					when it comes to the day-to-day product develpment and code is where it's at for me.
+				</p>
+				<!-- <p class="aboutme">The story of how I chose web development as a career is a long and winded one, but in short,
 					my first digital love was 3D design until I stumbled upon a powerful web design workflow, back in 2005.
 					Combined, the story and the workflow, took me through a beautiful journey where I got to either study, work
-					directly in, or be exposed to:</p>
-				<ul>
+					directly in, or be exposed to:</p> -->
+				<!-- <ul>
 					<li>Industry research and competition analysis</li>
 					<li>Art direction and Graphic Design</li>
 					<li>Photography production and post-production</li>
@@ -98,7 +107,7 @@
 					<li>Entrepreneurship</li>
 					<li>3D Animation and printing</li>
 				</ul>
-				<p>Arriving to my final destination, <b style="color: var(--color-5)">code</b>.</p>
+				<p>Arriving to my final destination, <b style="color: var(--color-5)">code</b>.</p> -->
 			</div>
 		</section>
 		<!-- TODO: Use section below to create filters for tessellate when used to navigate aspects of my life -->
@@ -124,14 +133,14 @@
         </section> -->
 		<section id="portfolio">
 			<!-- <img class="mode-tag" style="width: 200px;" src="./static/img/shapes_light.png" data-light="./static/img/shapes_light.png" data-dark="./static/img/shapes_dark.png" alt="portfolio briefcase" > -->
-			<span style="font-size: 7rem; line-height: 8rem;">💼</span>
+			<!-- <span style="font-size: 7rem; line-height: 8rem;">💼</span> -->
 			<div class="content">
 				<h2>Portfolio</h2>
 
 				<!-- <div id="threejs" style="width:100%; height: 200px; background:red;"></div> -->
 
 				<p>
-					This portfolio showcases my fun projects as a Javascript and Python developer. Some ocasionally break, if so -- pardon my dust 👷🏼‍♂️
+					This portfolio showcases my fun projects as a Javascript and Python developer.
 				</p>
 				
 				<div class="project">
@@ -179,7 +188,7 @@
 				<div class="project">
 					<h3>Wordle Search<code style="font-size: 1rem"></code></h3>
 					<h4>Filter worlde solution space interactively.</h4>
-					<p>Very fast react app that filters <code>12,947</code> elements in realtime. Just start typing and it routes the input 
+					<p>React app that filters <code>12,947</code> elements in realtime. Just start typing and it routes the input 
 						 to the main text fields, no need to tap on the element to <code>focus</code>  on it.
 						 This application is fully responsive down to <code>250</code> pixels.
 					</p>
@@ -256,7 +265,7 @@
 					<p>This project is purely written in HTML, CSS and Vanilla JS. The only assets used is a font. I wrote a
 						python script to create the game sprites. It takes as an input a reference image and outputs the
 						corresponding CSS code. <br /><code
-							style="font-size: 1rem; line-height: 1.2rem;">* Doesn't work on mobile devices, yet. <br />** 🐭 mouse wheel to move the ship, click to shoot.</code>
+							style="font-size: 1rem; line-height: 1.2rem;">** mouse or crown wheel to move the ship, click or tap to shoot.</code>
 					</p>
 					<div class="project-content">
 						<h4>Technologies</h4>
@@ -275,8 +284,8 @@
 		</section>
 		</section>
 		<section id="contact">
-			<h3>Contact</h3>
-			<span style="font-size: 6rem; line-height: 7rem;">👨🏻‍💻</span>
+			<h2>Contact</h2>
+			<!-- <span style="font-size: 6rem; line-height: 7rem;">👨🏻‍💻</span> -->
 			<p>
 				For more information please visit:
 				<a href="https://www.linkedin.com/in/garciapat">

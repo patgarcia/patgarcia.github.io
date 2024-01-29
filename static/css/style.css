@@ -250,7 +250,7 @@ main section:first-of-type {
   max-width: 700px;
   position: relative;
   z-index: 1;
-  padding: 100px 40px 5% 40px;
+  padding: 2% 40px;
   box-sizing: border-box;
   margin: 3px auto;
   margin-bottom: 10%;
@@ -316,7 +316,7 @@ main section:first-of-type button,
 }
 #about h2.aboutme {
   color: var(--color-5);
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   opacity: 0.7;
 }
 #about p.aboutme {
@@ -340,6 +340,9 @@ main section:first-of-type button,
   z-index: 2;
   position: relative;
   color: var(--color-5);
+}
+#portfolio h2{
+  font-size: 2rem;
 }
 .project {
   /* display: flex; */
@@ -390,13 +393,15 @@ main section:first-of-type button,
   padding: 0.7rem 1.5rem;
   display: block;
   border-radius: 0.75rem;
-  background-image: linear-gradient(60deg, var(--color-3) 25%, var(--color-1));
+  /* color: var(--color-6); */
+
+  /* background-image: linear-gradient(60deg, var(--color-3) 25%, var(--color-1)); */
   cursor: pointer;
 }
 .project button:last-child {
   margin-top: 6px;
-  background-image: linear-gradient(60deg, var(--color-u) 5%, var(--color-1));
-  color: var(--color-6);
+  /* background-image: linear-gradient(60deg, var(--color-u) 5%, var(--color-1)); */
+  /* color: var(--color-6); */
 }
 /* .project button:hover {
     margin: -2px auto;
